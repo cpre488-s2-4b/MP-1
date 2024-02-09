@@ -2,6 +2,8 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
+use work.axi_ppm_types.all;
+
 entity axi_ppm_v1_0_S00_AXI is
 	generic (
 		-- Users to add parameters here
@@ -16,7 +18,7 @@ entity axi_ppm_v1_0_S00_AXI is
 	);
 	port (
 		-- Users to add ports here
-
+        REG_FILE            : out register_file(0 to 15)(C_S_AXI_DATA_WIDTH - 1 downto 0);
 		-- User ports ends
 		-- Do not modify the ports beyond this line
 

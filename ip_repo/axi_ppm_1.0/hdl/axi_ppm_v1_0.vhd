@@ -2,6 +2,8 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
+use work.axi_ppm_types.all;
+
 entity axi_ppm_v1_0 is
 	generic (
 		-- Users to add parameters here
@@ -16,7 +18,8 @@ entity axi_ppm_v1_0 is
 	);
 	port (
 		-- Users to add ports here
-
+        PPM_INPUT       : in std_logic;
+        PPM_OUTPUT      : out std_logic;
 		-- User ports ends
 		-- Do not modify the ports beyond this line
 
@@ -55,6 +58,7 @@ architecture arch_imp of axi_ppm_v1_0 is
 		C_S_AXI_ADDR_WIDTH	: integer	:= 6
 		);
 		port (
+		REG_FILE            : out register_file(0 to 15)(C_S_AXI_DATA_WIDTH - 1 downto 0);
 		S_AXI_ACLK	: in std_logic;
 		S_AXI_ARESETN	: in std_logic;
 		S_AXI_AWADDR	: in std_logic_vector(C_S_AXI_ADDR_WIDTH-1 downto 0);
@@ -78,6 +82,17 @@ architecture arch_imp of axi_ppm_v1_0 is
 		S_AXI_RREADY	: in std_logic
 		);
 	end component axi_ppm_v1_0_S00_AXI;
+
+    signal reg_file : register_file(0 to 15)(C_S00_AXI_DATA_WIDTH - 1 downto 0);
+
+    alias reg_conf : std_logic_vector(C_S00_AXI_DATA_WIDTH - 1 downto 0) is reg_file(0);
+    alias relay_mode : std_logic is reg_conf(0);
+    
+    alias reg_frame_count : std_logic_vector(C_S00_AXI_DATA_WIDTH - 1 downto 0) is reg_file(1);
+    
+    
+    
+    
 
 begin
 
