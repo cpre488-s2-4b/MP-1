@@ -16,9 +16,11 @@ entity Capture_PPM is
     port(
         PPM_CLK : in std_logic;
         PPM_IN : in std_logic;
-        PPM_OUT : out std_logic_vector(31 downto 0);
+--        PPM_OUT : out std_logic_vector(31 downto 0);
         PPM_COUNT_EN : in std_logic;
-        S_AXI_ARESETN : in std_logic;
+--        S_AXI_ARESETN : in std_logic;
+        reg_1_in : in std_logic_vector(31 downto 0);
+        reg_1_out : out std_logic_vector(31 downto 0);
         reg_10 : out std_logic_vector(31 downto 0);
         reg_11 : out std_logic_vector(31 downto 0);
         reg_12 : out std_logic_vector(31 downto 0);
