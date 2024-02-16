@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "X:/cpre488/MP1/quad_uav/quad_uav.runs/synth_1/design_1_wrapper.tcl"
+  variable script "X:/CprE488/Labs/MP-1/quad_uav/quad_uav.runs/synth_1/design_1_wrapper.tcl"
   variable category "vivado_synth"
 }
 
@@ -71,6 +71,7 @@ proc create_report { reportName command } {
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param chipscope.maxJobs 5
+set_param xicom.use_bs_reader 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7z020clg484-1
 
@@ -78,36 +79,36 @@ set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
-set_property webtalk.parent_dir X:/cpre488/MP1/quad_uav/quad_uav.cache/wt [current_project]
-set_property parent.project_path X:/cpre488/MP1/quad_uav/quad_uav.xpr [current_project]
+set_property webtalk.parent_dir X:/CprE488/Labs/MP-1/quad_uav/quad_uav.cache/wt [current_project]
+set_property parent.project_path X:/CprE488/Labs/MP-1/quad_uav/quad_uav.xpr [current_project]
 set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
 set_property board_part em.avnet.com:zed:part0:1.4 [current_project]
-set_property ip_repo_paths x:/cpre488/MP1/ip_repo/axi_ppm_1.0 [current_project]
+set_property ip_repo_paths x:/CprE488/Labs/MP-1/ip_repo/axi_ppm_1.0 [current_project]
 update_ip_catalog
-set_property ip_output_repo x:/cpre488/MP1/quad_uav/quad_uav.cache/ip [current_project]
+set_property ip_output_repo x:/CprE488/Labs/MP-1/quad_uav/quad_uav.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_vhdl -library xil_defaultlib X:/cpre488/MP1/quad_uav/quad_uav.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.vhd
-add_files X:/cpre488/MP1/quad_uav/quad_uav.srcs/sources_1/bd/design_1/design_1.bd
-set_property used_in_implementation false [get_files -all x:/cpre488/MP1/quad_uav/quad_uav.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc]
-set_property used_in_implementation false [get_files -all x:/cpre488/MP1/quad_uav/quad_uav.srcs/sources_1/bd/design_1/ip/design_1_xbar_1/design_1_xbar_1_ooc.xdc]
-set_property used_in_implementation false [get_files -all x:/cpre488/MP1/quad_uav/quad_uav.srcs/sources_1/bd/design_1/ip/design_1_rst_ps7_0_100M_0/design_1_rst_ps7_0_100M_0_board.xdc]
-set_property used_in_implementation false [get_files -all x:/cpre488/MP1/quad_uav/quad_uav.srcs/sources_1/bd/design_1/ip/design_1_rst_ps7_0_100M_0/design_1_rst_ps7_0_100M_0.xdc]
-set_property used_in_implementation false [get_files -all x:/cpre488/MP1/quad_uav/quad_uav.srcs/sources_1/bd/design_1/ip/design_1_rst_ps7_0_100M_0/design_1_rst_ps7_0_100M_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all x:/cpre488/MP1/quad_uav/quad_uav.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_0_4/design_1_axi_gpio_0_4_board.xdc]
-set_property used_in_implementation false [get_files -all x:/cpre488/MP1/quad_uav/quad_uav.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_0_4/design_1_axi_gpio_0_4_ooc.xdc]
-set_property used_in_implementation false [get_files -all x:/cpre488/MP1/quad_uav/quad_uav.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_0_4/design_1_axi_gpio_0_4.xdc]
-set_property used_in_implementation false [get_files -all x:/cpre488/MP1/quad_uav/quad_uav.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_0_5/design_1_axi_gpio_0_5_board.xdc]
-set_property used_in_implementation false [get_files -all x:/cpre488/MP1/quad_uav/quad_uav.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_0_5/design_1_axi_gpio_0_5_ooc.xdc]
-set_property used_in_implementation false [get_files -all x:/cpre488/MP1/quad_uav/quad_uav.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_0_5/design_1_axi_gpio_0_5.xdc]
-set_property used_in_implementation false [get_files -all x:/cpre488/MP1/quad_uav/quad_uav.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_1_2/design_1_axi_gpio_1_2_board.xdc]
-set_property used_in_implementation false [get_files -all x:/cpre488/MP1/quad_uav/quad_uav.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_1_2/design_1_axi_gpio_1_2_ooc.xdc]
-set_property used_in_implementation false [get_files -all x:/cpre488/MP1/quad_uav/quad_uav.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_1_2/design_1_axi_gpio_1_2.xdc]
-set_property used_in_implementation false [get_files -all x:/cpre488/MP1/quad_uav/quad_uav.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all X:/cpre488/MP1/quad_uav/quad_uav.srcs/sources_1/bd/design_1/design_1_ooc.xdc]
+read_vhdl -library xil_defaultlib X:/CprE488/Labs/MP-1/quad_uav/quad_uav.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.vhd
+add_files X:/CprE488/Labs/MP-1/quad_uav/quad_uav.srcs/sources_1/bd/design_1/design_1.bd
+set_property used_in_implementation false [get_files -all x:/CprE488/Labs/MP-1/quad_uav/quad_uav.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc]
+set_property used_in_implementation false [get_files -all x:/CprE488/Labs/MP-1/quad_uav/quad_uav.srcs/sources_1/bd/design_1/ip/design_1_xbar_1/design_1_xbar_1_ooc.xdc]
+set_property used_in_implementation false [get_files -all x:/CprE488/Labs/MP-1/quad_uav/quad_uav.srcs/sources_1/bd/design_1/ip/design_1_rst_ps7_0_100M_0/design_1_rst_ps7_0_100M_0_board.xdc]
+set_property used_in_implementation false [get_files -all x:/CprE488/Labs/MP-1/quad_uav/quad_uav.srcs/sources_1/bd/design_1/ip/design_1_rst_ps7_0_100M_0/design_1_rst_ps7_0_100M_0.xdc]
+set_property used_in_implementation false [get_files -all x:/CprE488/Labs/MP-1/quad_uav/quad_uav.srcs/sources_1/bd/design_1/ip/design_1_rst_ps7_0_100M_0/design_1_rst_ps7_0_100M_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all x:/CprE488/Labs/MP-1/quad_uav/quad_uav.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_0_4/design_1_axi_gpio_0_4_board.xdc]
+set_property used_in_implementation false [get_files -all x:/CprE488/Labs/MP-1/quad_uav/quad_uav.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_0_4/design_1_axi_gpio_0_4_ooc.xdc]
+set_property used_in_implementation false [get_files -all x:/CprE488/Labs/MP-1/quad_uav/quad_uav.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_0_4/design_1_axi_gpio_0_4.xdc]
+set_property used_in_implementation false [get_files -all x:/CprE488/Labs/MP-1/quad_uav/quad_uav.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_0_5/design_1_axi_gpio_0_5_board.xdc]
+set_property used_in_implementation false [get_files -all x:/CprE488/Labs/MP-1/quad_uav/quad_uav.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_0_5/design_1_axi_gpio_0_5_ooc.xdc]
+set_property used_in_implementation false [get_files -all x:/CprE488/Labs/MP-1/quad_uav/quad_uav.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_0_5/design_1_axi_gpio_0_5.xdc]
+set_property used_in_implementation false [get_files -all x:/CprE488/Labs/MP-1/quad_uav/quad_uav.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_1_2/design_1_axi_gpio_1_2_board.xdc]
+set_property used_in_implementation false [get_files -all x:/CprE488/Labs/MP-1/quad_uav/quad_uav.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_1_2/design_1_axi_gpio_1_2_ooc.xdc]
+set_property used_in_implementation false [get_files -all x:/CprE488/Labs/MP-1/quad_uav/quad_uav.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_1_2/design_1_axi_gpio_1_2.xdc]
+set_property used_in_implementation false [get_files -all x:/CprE488/Labs/MP-1/quad_uav/quad_uav.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all X:/CprE488/Labs/MP-1/quad_uav/quad_uav.srcs/sources_1/bd/design_1/design_1_ooc.xdc]
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -118,8 +119,8 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc X:/cpre488/MP1/docs/ZedBoard/zedboard_master.xdc
-set_property used_in_implementation false [get_files X:/cpre488/MP1/docs/ZedBoard/zedboard_master.xdc]
+read_xdc X:/CprE488/Labs/MP-1/docs/ZedBoard/zedboard_master.xdc
+set_property used_in_implementation false [get_files X:/CprE488/Labs/MP-1/docs/ZedBoard/zedboard_master.xdc]
 
 read_xdc dont_touch.xdc
 set_property used_in_implementation false [get_files dont_touch.xdc]

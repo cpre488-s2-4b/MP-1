@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='X:/cpre488/MP1/quad_uav/quad_uav.runs/synth_1'
+HD_PWD='X:/CprE488/Labs/MP-1/quad_uav/quad_uav.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

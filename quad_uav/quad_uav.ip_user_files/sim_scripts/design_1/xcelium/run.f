@@ -78,8 +78,8 @@
   "../../../bd/design_1/ipshared/edit_axi_ppm_v1_0.srcs/sources_1/imports/vhdl_first_verions/ppm_generate.vhd" \
 -endlib
 -makelib xcelium_lib/xil_defaultlib -v200x \
-  "../../../bd/design_1/ipshared/7166/hdl/axi_ppm_v1_0_S00_AXI.vhd" \
-  "../../../bd/design_1/ipshared/7166/hdl/axi_ppm_v1_0.vhd" \
+  "../../../bd/design_1/ipshared/f7aa/hdl/axi_ppm_v1_0_S00_AXI.vhd" \
+  "../../../bd/design_1/ipshared/f7aa/hdl/axi_ppm_v1_0.vhd" \
 -endlib
 -makelib xcelium_lib/xil_defaultlib \
   "../../../bd/design_1/ip/design_1_axi_ppm_0_3/sim/design_1_axi_ppm_0_3.vhd" \
