@@ -1,3 +1,5 @@
 MP-1.cache/
 MP-1.sim/
-*.log
+**/*.log
+**/*.cache
+**/*.runs

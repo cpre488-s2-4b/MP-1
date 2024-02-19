@@ -1,0 +1,17 @@
+vhdl xil_defaultlib  \
+"../../../bd/design_1/ip/design_1_rst_ps7_0_100M_0/sim/design_1_rst_ps7_0_100M_0.vhd" \
+"../../../bd/design_1/ip/design_1_axi_gpio_0_4/sim/design_1_axi_gpio_0_4.vhd" \
+"../../../bd/design_1/ip/design_1_axi_gpio_0_5/sim/design_1_axi_gpio_0_5.vhd" \
+"../../../bd/design_1/ip/design_1_axi_gpio_1_2/sim/design_1_axi_gpio_1_2.vhd" \
+"../../../bd/design_1/ipshared/0884/src/ppm_detection.vhd" \
+"../../../bd/design_1/ipshared/0884/src/ppm_generate.vhd" \
+
+vhdl2008 xil_defaultlib  \
+"../../../bd/design_1/ipshared/0884/hdl/axi_ppm_v1_0_S00_AXI.vhd" \
+"../../../bd/design_1/ipshared/0884/hdl/axi_ppm_v1_0.vhd" \
+
+vhdl xil_defaultlib  \
+"../../../bd/design_1/ip/design_1_axi_ppm_0_5/sim/design_1_axi_ppm_0_5.vhd" \
+"../../../bd/design_1/sim/design_1.vhd" \
+
+nosort

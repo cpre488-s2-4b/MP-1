@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "/home/vsadvani/cpre488/MP1/quad_uav/quad_uav.runs/design_1_axi_gpio_1_2_synth_1/design_1_axi_gpio_1_2.tcl"
+  variable script "X:/CprE488/Labs/MP-1/quad_uav/quad_uav.runs/design_1_axi_gpio_1_2_synth_1/design_1_axi_gpio_1_2.tcl"
   variable category "vivado_synth"
 }
 
@@ -70,7 +70,6 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "design_1_axi_gpio_1_2_synth_1" START { ROLLUP_AUTO }
-set_param chipscope.maxJobs 1
 set_param project.vivado.isBlockSynthRun true
 set_msg_config -msgmgr_mode ooc_run
 OPTRACE "Creating in-memory project" START { }
@@ -80,22 +79,22 @@ set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
-set_property webtalk.parent_dir /home/vsadvani/cpre488/MP1/quad_uav/quad_uav.cache/wt [current_project]
-set_property parent.project_path /home/vsadvani/cpre488/MP1/quad_uav/quad_uav.xpr [current_project]
+set_property webtalk.parent_dir X:/CprE488/Labs/MP-1/quad_uav/quad_uav.cache/wt [current_project]
+set_property parent.project_path X:/CprE488/Labs/MP-1/quad_uav/quad_uav.xpr [current_project]
 set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
 set_property board_part em.avnet.com:zed:part0:1.4 [current_project]
-set_property ip_repo_paths /home/vsadvani/cpre488/MP1/ip_repo/axi_ppm_1.0 [current_project]
+set_property ip_repo_paths x:/CprE488/Labs/MP-1/quad_uav/quad_uav.ipdefs/axi_ppm_1.0 [current_project]
 update_ip_catalog
-set_property ip_output_repo /home/vsadvani/cpre488/MP1/quad_uav/quad_uav.cache/ip [current_project]
+set_property ip_output_repo x:/CprE488/Labs/MP-1/quad_uav/quad_uav.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_ip -quiet /home/vsadvani/cpre488/MP1/quad_uav/quad_uav.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_1_2/design_1_axi_gpio_1_2.xci
-set_property used_in_implementation false [get_files -all /home/vsadvani/cpre488/MP1/quad_uav/quad_uav.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_1_2/design_1_axi_gpio_1_2_board.xdc]
-set_property used_in_implementation false [get_files -all /home/vsadvani/cpre488/MP1/quad_uav/quad_uav.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_1_2/design_1_axi_gpio_1_2_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/vsadvani/cpre488/MP1/quad_uav/quad_uav.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_1_2/design_1_axi_gpio_1_2.xdc]
+read_ip -quiet X:/CprE488/Labs/MP-1/quad_uav/quad_uav.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_1_2/design_1_axi_gpio_1_2.xci
+set_property used_in_implementation false [get_files -all x:/CprE488/Labs/MP-1/quad_uav/quad_uav.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_1_2/design_1_axi_gpio_1_2_board.xdc]
+set_property used_in_implementation false [get_files -all x:/CprE488/Labs/MP-1/quad_uav/quad_uav.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_1_2/design_1_axi_gpio_1_2_ooc.xdc]
+set_property used_in_implementation false [get_files -all x:/CprE488/Labs/MP-1/quad_uav/quad_uav.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_1_2/design_1_axi_gpio_1_2.xdc]
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -111,7 +110,7 @@ set_property used_in_implementation false [get_files dont_touch.xdc]
 set_param ips.enableIPCacheLiteLoad 1
 OPTRACE "Configure IP Cache" START { }
 
-set cached_ip [config_ip_cache -export -no_bom  -dir /home/vsadvani/cpre488/MP1/quad_uav/quad_uav.runs/design_1_axi_gpio_1_2_synth_1 -new_name design_1_axi_gpio_1_2 -ip [get_ips design_1_axi_gpio_1_2]]
+set cached_ip [config_ip_cache -export -no_bom  -dir X:/CprE488/Labs/MP-1/quad_uav/quad_uav.runs/design_1_axi_gpio_1_2_synth_1 -new_name design_1_axi_gpio_1_2 -ip [get_ips design_1_axi_gpio_1_2]]
 
 OPTRACE "Configure IP Cache" END { }
 if { $cached_ip eq {} } {
@@ -163,32 +162,32 @@ create_report "design_1_axi_gpio_1_2_synth_1_synth_report_utilization_0" "report
 OPTRACE "synth reports" END { }
 
 if { [catch {
-  file copy -force /home/vsadvani/cpre488/MP1/quad_uav/quad_uav.runs/design_1_axi_gpio_1_2_synth_1/design_1_axi_gpio_1_2.dcp /home/vsadvani/cpre488/MP1/quad_uav/quad_uav.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_1_2/design_1_axi_gpio_1_2.dcp
+  file copy -force X:/CprE488/Labs/MP-1/quad_uav/quad_uav.runs/design_1_axi_gpio_1_2_synth_1/design_1_axi_gpio_1_2.dcp x:/CprE488/Labs/MP-1/quad_uav/quad_uav.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_1_2/design_1_axi_gpio_1_2.dcp
 } _RESULT ] } { 
   send_msg_id runtcl-3 error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
   error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
 }
 
 if { [catch {
-  write_verilog -force -mode synth_stub /home/vsadvani/cpre488/MP1/quad_uav/quad_uav.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_1_2/design_1_axi_gpio_1_2_stub.v
+  write_verilog -force -mode synth_stub x:/CprE488/Labs/MP-1/quad_uav/quad_uav.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_1_2/design_1_axi_gpio_1_2_stub.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a Verilog synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_vhdl -force -mode synth_stub /home/vsadvani/cpre488/MP1/quad_uav/quad_uav.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_1_2/design_1_axi_gpio_1_2_stub.vhdl
+  write_vhdl -force -mode synth_stub x:/CprE488/Labs/MP-1/quad_uav/quad_uav.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_1_2/design_1_axi_gpio_1_2_stub.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a VHDL synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_verilog -force -mode funcsim /home/vsadvani/cpre488/MP1/quad_uav/quad_uav.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_1_2/design_1_axi_gpio_1_2_sim_netlist.v
+  write_verilog -force -mode funcsim x:/CprE488/Labs/MP-1/quad_uav/quad_uav.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_1_2/design_1_axi_gpio_1_2_sim_netlist.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the Verilog functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_vhdl -force -mode funcsim /home/vsadvani/cpre488/MP1/quad_uav/quad_uav.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_1_2/design_1_axi_gpio_1_2_sim_netlist.vhdl
+  write_vhdl -force -mode funcsim x:/CprE488/Labs/MP-1/quad_uav/quad_uav.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_1_2/design_1_axi_gpio_1_2_sim_netlist.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the VHDL functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
@@ -198,47 +197,47 @@ if { [catch {
 
 
 if { [catch {
-  file copy -force /home/vsadvani/cpre488/MP1/quad_uav/quad_uav.runs/design_1_axi_gpio_1_2_synth_1/design_1_axi_gpio_1_2.dcp /home/vsadvani/cpre488/MP1/quad_uav/quad_uav.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_1_2/design_1_axi_gpio_1_2.dcp
+  file copy -force X:/CprE488/Labs/MP-1/quad_uav/quad_uav.runs/design_1_axi_gpio_1_2_synth_1/design_1_axi_gpio_1_2.dcp x:/CprE488/Labs/MP-1/quad_uav/quad_uav.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_1_2/design_1_axi_gpio_1_2.dcp
 } _RESULT ] } { 
   send_msg_id runtcl-3 error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
   error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
 }
 
 if { [catch {
-  file rename -force /home/vsadvani/cpre488/MP1/quad_uav/quad_uav.runs/design_1_axi_gpio_1_2_synth_1/design_1_axi_gpio_1_2_stub.v /home/vsadvani/cpre488/MP1/quad_uav/quad_uav.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_1_2/design_1_axi_gpio_1_2_stub.v
+  file rename -force X:/CprE488/Labs/MP-1/quad_uav/quad_uav.runs/design_1_axi_gpio_1_2_synth_1/design_1_axi_gpio_1_2_stub.v x:/CprE488/Labs/MP-1/quad_uav/quad_uav.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_1_2/design_1_axi_gpio_1_2_stub.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a Verilog synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force /home/vsadvani/cpre488/MP1/quad_uav/quad_uav.runs/design_1_axi_gpio_1_2_synth_1/design_1_axi_gpio_1_2_stub.vhdl /home/vsadvani/cpre488/MP1/quad_uav/quad_uav.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_1_2/design_1_axi_gpio_1_2_stub.vhdl
+  file rename -force X:/CprE488/Labs/MP-1/quad_uav/quad_uav.runs/design_1_axi_gpio_1_2_synth_1/design_1_axi_gpio_1_2_stub.vhdl x:/CprE488/Labs/MP-1/quad_uav/quad_uav.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_1_2/design_1_axi_gpio_1_2_stub.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a VHDL synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force /home/vsadvani/cpre488/MP1/quad_uav/quad_uav.runs/design_1_axi_gpio_1_2_synth_1/design_1_axi_gpio_1_2_sim_netlist.v /home/vsadvani/cpre488/MP1/quad_uav/quad_uav.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_1_2/design_1_axi_gpio_1_2_sim_netlist.v
+  file rename -force X:/CprE488/Labs/MP-1/quad_uav/quad_uav.runs/design_1_axi_gpio_1_2_synth_1/design_1_axi_gpio_1_2_sim_netlist.v x:/CprE488/Labs/MP-1/quad_uav/quad_uav.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_1_2/design_1_axi_gpio_1_2_sim_netlist.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the Verilog functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force /home/vsadvani/cpre488/MP1/quad_uav/quad_uav.runs/design_1_axi_gpio_1_2_synth_1/design_1_axi_gpio_1_2_sim_netlist.vhdl /home/vsadvani/cpre488/MP1/quad_uav/quad_uav.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_1_2/design_1_axi_gpio_1_2_sim_netlist.vhdl
+  file rename -force X:/CprE488/Labs/MP-1/quad_uav/quad_uav.runs/design_1_axi_gpio_1_2_synth_1/design_1_axi_gpio_1_2_sim_netlist.vhdl x:/CprE488/Labs/MP-1/quad_uav/quad_uav.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_1_2/design_1_axi_gpio_1_2_sim_netlist.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the VHDL functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
 
 }; # end if cached_ip 
 
-if {[file isdir /home/vsadvani/cpre488/MP1/quad_uav/quad_uav.ip_user_files/ip/design_1_axi_gpio_1_2]} {
+if {[file isdir X:/CprE488/Labs/MP-1/quad_uav/quad_uav.ip_user_files/ip/design_1_axi_gpio_1_2]} {
   catch { 
-    file copy -force /home/vsadvani/cpre488/MP1/quad_uav/quad_uav.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_1_2/design_1_axi_gpio_1_2_stub.v /home/vsadvani/cpre488/MP1/quad_uav/quad_uav.ip_user_files/ip/design_1_axi_gpio_1_2
+    file copy -force x:/CprE488/Labs/MP-1/quad_uav/quad_uav.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_1_2/design_1_axi_gpio_1_2_stub.v X:/CprE488/Labs/MP-1/quad_uav/quad_uav.ip_user_files/ip/design_1_axi_gpio_1_2
   }
 }
 
-if {[file isdir /home/vsadvani/cpre488/MP1/quad_uav/quad_uav.ip_user_files/ip/design_1_axi_gpio_1_2]} {
+if {[file isdir X:/CprE488/Labs/MP-1/quad_uav/quad_uav.ip_user_files/ip/design_1_axi_gpio_1_2]} {
   catch { 
-    file copy -force /home/vsadvani/cpre488/MP1/quad_uav/quad_uav.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_1_2/design_1_axi_gpio_1_2_stub.vhdl /home/vsadvani/cpre488/MP1/quad_uav/quad_uav.ip_user_files/ip/design_1_axi_gpio_1_2
+    file copy -force x:/CprE488/Labs/MP-1/quad_uav/quad_uav.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_1_2/design_1_axi_gpio_1_2_stub.vhdl X:/CprE488/Labs/MP-1/quad_uav/quad_uav.ip_user_files/ip/design_1_axi_gpio_1_2
   }
 }
 file delete __synthesis_is_running__
